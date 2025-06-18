@@ -1,0 +1,18 @@
+# Bytecode
+__pycache__/
+*.py[cod]
+
+# Virtuelle Umgebung
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Modell-Artefakte
+models/
+
+# IDE/OS
+.DS_Store
+*.log

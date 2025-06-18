@@ -24,7 +24,7 @@ def save_processed_data(df: pd.DataFrame, filename: str):
     :param df: DataFrame, das gespeichert werden soll.
     :param filename: Dateiname im PROC_DIR (z.B. 'train_clean.csv').
     """
-    os.makedirs(PROC_DIR, exist_ok=True)
+    os.makedirs(PROC_DIR, exist_ok=True) #Ordner anlegen falls noch nicht da, exist_ok unterdrückt Fehler wenn schon da
     path = os.path.join(PROC_DIR, filename)
     df.to_csv(path, index=False)
 
