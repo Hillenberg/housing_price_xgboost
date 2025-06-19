@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/620587838464852309/d95f7e98b23b4eaca1e09ca64dac0fb4/artifacts
+end_time: 1750339159329
+entry_point_name: ''
+experiment_id: '620587838464852309'
+lifecycle_stage: active
+run_id: d95f7e98b23b4eaca1e09ca64dac0fb4
+run_name: illustrious-gnu-649
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750339154893
+status: 3
+tags: []
+user_id: hillenberg

@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/620587838464852309/aa1ac584d8cc4ffd9fa72eabe2b393b6/artifacts
+end_time: 1750338764378
+entry_point_name: ''
+experiment_id: '620587838464852309'
+lifecycle_stage: active
+run_id: aa1ac584d8cc4ffd9fa72eabe2b393b6
+run_name: exultant-yak-997
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750338760039
+status: 3
+tags: []
+user_id: hillenberg

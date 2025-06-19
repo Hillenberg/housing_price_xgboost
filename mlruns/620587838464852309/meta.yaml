@@ -1,0 +1,6 @@
+artifact_location: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/620587838464852309
+creation_time: 1750338759658
+experiment_id: '620587838464852309'
+last_update_time: 1750338759658
+lifecycle_stage: active
+name: house-price-prediction

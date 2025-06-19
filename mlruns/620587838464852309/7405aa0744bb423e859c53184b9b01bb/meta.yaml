@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/620587838464852309/7405aa0744bb423e859c53184b9b01bb/artifacts
+end_time: 1750341777913
+entry_point_name: ''
+experiment_id: '620587838464852309'
+lifecycle_stage: active
+run_id: 7405aa0744bb423e859c53184b9b01bb
+run_name: placid-duck-415
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750341774016
+status: 3
+tags: []
+user_id: hillenberg

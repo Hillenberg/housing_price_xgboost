@@ -21,10 +21,11 @@ N_SPLITS = 5  # Anzahl Splits für K-Fold CV
 
 # Default-Hyperparameter für XGBRegressor (kann später überschrieben werden)
 XGB_PARAMS = {
-    "n_estimators": 1000,
-    "learning_rate": 0.05,
-    "max_depth": 6,
+    "n_estimators": 1500,
+    "learning_rate": 0.015,
+    "max_depth": 4,
     "subsample": 0.8,
-    "colsample_bytree": 0.8,
-    "random_state": SEED
+    "colsample_bytree": 0.7,
+    "random_state": SEED,
+    "eval_metric": "rmse"
 }
