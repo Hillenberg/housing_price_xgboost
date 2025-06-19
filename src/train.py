@@ -7,6 +7,8 @@ trainiert das finale Modell auf dem gesamten Datensatz und speichert die Pipelin
 import os
 import numpy as np
 import joblib
+import matplotlib.pyplot as plt
+import pandas as pd
 from sklearn.model_selection import KFold, cross_val_score
 
 import mlflow
@@ -69,6 +71,26 @@ def main():
 
         # 8) Finales Modell trainieren & speichern
         pipeline.fit(X, y)
+
+        # Feature-Importances aus dem Modell holen
+        modeltype = pipeline.named_steps["model"]
+        importances = modeltype.feature_importances_
+        feature_names = pipeline.named_steps["preprocessor"].get_feature_names_out()
+
+        # in Series verpacken und sortieren
+        fi = pd.Series(importances, index=feature_names)
+        fi_top10 = fi.sort_values(ascending=False).head(10)
+
+        # Plot erzeugen
+        fig, ax = plt.subplots(figsize=(8, 6))
+        fi_top10.sort_values().plot.barh(ax=ax)
+        ax.set_title("Top 10 Feature Importances")
+        ax.set_xlabel("Importance")
+        plt.tight_layout()
+
+        # Plot als Artefakt loggen
+        mlflow.log_figure(fig, "feature_importances_top10.png")
+
         os.makedirs(MODEL_DIR, exist_ok=True)
         model_path = os.path.join(MODEL_DIR, "pipeline.pkl")
         joblib.dump(pipeline, model_path)

@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/620587838464852309/5c577753d374472b8f6799694532eb88/artifacts
+end_time: 1750350015037
+entry_point_name: ''
+experiment_id: '620587838464852309'
+lifecycle_stage: active
+run_id: 5c577753d374472b8f6799694532eb88
+run_name: bittersweet-rat-262
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750350010511
+status: 3
+tags: []
+user_id: hillenberg
