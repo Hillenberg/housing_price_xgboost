@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/341447129335100548/28ff73d1570e42f19956219205623208/artifacts
+end_time: 1750363985167
+entry_point_name: ''
+experiment_id: '341447129335100548'
+lifecycle_stage: active
+run_id: 28ff73d1570e42f19956219205623208
+run_name: adorable-fowl-643
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750363913652
+status: 3
+tags: []
+user_id: hillenberg

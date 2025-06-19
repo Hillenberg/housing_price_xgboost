@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/620587838464852309/0b857dbce91c48e5b395e2097539f941/artifacts
+end_time: 1750363371753
+entry_point_name: ''
+experiment_id: '620587838464852309'
+lifecycle_stage: active
+run_id: 0b857dbce91c48e5b395e2097539f941
+run_name: bright-lamb-372
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750363367612
+status: 3
+tags: []
+user_id: hillenberg

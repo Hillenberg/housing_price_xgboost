@@ -1,0 +1,6 @@
+artifact_location: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/341447129335100548
+creation_time: 1750360880480
+experiment_id: '341447129335100548'
+last_update_time: 1750360880480
+lifecycle_stage: active
+name: house-price-hpo

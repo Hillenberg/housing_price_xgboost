@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/341447129335100548/69960d6c6bfb49a5b73023783c6318c8/artifacts
+end_time: 1750364277382
+entry_point_name: ''
+experiment_id: '341447129335100548'
+lifecycle_stage: active
+run_id: 69960d6c6bfb49a5b73023783c6318c8
+run_name: dazzling-flea-220
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750364211642
+status: 3
+tags: []
+user_id: hillenberg
