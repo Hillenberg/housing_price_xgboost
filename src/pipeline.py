@@ -9,15 +9,17 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, PowerTransformer
 from xgboost import XGBRegressor
+from lightgbm import LGBMRegressor
+from sklearn.linear_model import Lasso
 
-from src.config import XGB_PARAMS
+from src.config import MODEL_TYPE, XGB_PARAMS, LGBM_PARAMS, LASSO_PARAMS
 
 
 def build_pipeline(num_feats, cat_feats, use_power_transform=True):
     """
     Baut eine ML-Pipeline auf:
       - Preprocessing (Imputation, Skalierung, optionaler Power-Transform)
-      - XGBRegressor mit Default-Hyperparametern aus config
+      - XGBRegressor mit Default-Hyperparametern aus config oder anderes Modell
 
     :param num_feats: Liste numerischer Feature-Namen
     :param cat_feats: Liste kategorialer Feature-Namen
@@ -45,10 +47,20 @@ def build_pipeline(num_feats, cat_feats, use_power_transform=True):
         ('cat', categorical_transformer, cat_feats)
     ], remainder='drop')
 
+    # Wähle den Estimator nach MODEL_TYPE
+    if MODEL_TYPE == "xgb":
+        estimator = XGBRegressor(**XGB_PARAMS)
+    elif MODEL_TYPE == "lgbm":
+        estimator = LGBMRegressor(**LGBM_PARAMS)
+    elif MODEL_TYPE == "lasso":
+        estimator = Lasso(**LASSO_PARAMS)
+    else:
+        raise ValueError(f"Unknown MODEL_TYPE={MODEL_TYPE}")
+
     # Vollständige Pipeline mit Vorverarbeitung und Modell
     pipeline = Pipeline(steps=[
         ('preprocessor', preprocessor),
-        ('model', XGBRegressor(**XGB_PARAMS))
+        ('model', estimator)
     ])
 
     return pipeline

@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/620587838464852309/9169170093ab426e98c80886fc214593/artifacts
+end_time: 1750345374958
+entry_point_name: ''
+experiment_id: '620587838464852309'
+lifecycle_stage: active
+run_id: 9169170093ab426e98c80886fc214593
+run_name: grandiose-perch-26
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750345370973
+status: 3
+tags: []
+user_id: hillenberg

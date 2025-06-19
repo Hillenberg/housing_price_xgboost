@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/620587838464852309/53b4699400bd456c8a251e31226711e3/artifacts
+end_time: 1750347250366
+entry_point_name: ''
+experiment_id: '620587838464852309'
+lifecycle_stage: active
+run_id: 53b4699400bd456c8a251e31226711e3
+run_name: nervous-ape-240
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750347227473
+status: 3
+tags: []
+user_id: hillenberg

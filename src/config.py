@@ -19,6 +19,21 @@ SEED = 42  # Zufalls-Seed für NumPy, scikit-learn, XGBoost
 # Cross-Validation
 N_SPLITS = 5  # Anzahl Splits für K-Fold CV
 
+# Welches Modell soll die Pipeline benutzen? Optionen: "xgb", "lgbm", "lasso"
+MODEL_TYPE = "xgb"
+
+# Parameter-Dicts für jedes Modell
+LGBM_PARAMS  = {
+    "n_estimators": 1000,
+    "learning_rate": 0.05,
+    "random_state": SEED
+}
+
+LASSO_PARAMS = {
+    "alpha": 1.0,
+    "random_state": SEED
+}
+
 # Default-Hyperparameter für XGBRegressor (kann später überschrieben werden)
 XGB_PARAMS = {
     "n_estimators": 1500,

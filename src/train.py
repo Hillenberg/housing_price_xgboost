@@ -13,7 +13,7 @@ import mlflow
 import mlflow.sklearn
 from mlflow.models.signature import infer_signature
 
-from src.config import PROC_DIR, MODEL_DIR, N_SPLITS, SEED, XGB_PARAMS
+from src.config import PROC_DIR, MODEL_DIR, N_SPLITS, SEED, MODEL_TYPE, XGB_PARAMS, LGBM_PARAMS, LASSO_PARAMS
 from src.data import load_processed_data
 from src.pipeline import build_pipeline
 
@@ -22,6 +22,7 @@ def main():
     # 1) MLflow Experiment konfigurieren
     mlflow.set_experiment("house-price-prediction")
     with mlflow.start_run():
+        mlflow.log_param("model_type", MODEL_TYPE)
         # 2) Daten laden
         df = load_processed_data("train_clean.csv")
         X = df.drop(columns=["Id", "SalePrice"])
@@ -37,7 +38,15 @@ def main():
         # 5) Parameter loggen
         mlflow.log_param("n_splits", N_SPLITS)
         mlflow.log_param("seed", SEED)
-        mlflow.log_params(XGB_PARAMS)
+        # logge Hyperparameter je nach Modelltyp
+        if MODEL_TYPE == "xgb":
+            mlflow.log_params(XGB_PARAMS)
+        elif MODEL_TYPE == "lgbm":
+            mlflow.log_params(LGBM_PARAMS)
+        elif MODEL_TYPE == "lasso":
+            mlflow.log_params(LASSO_PARAMS)
+        else:
+            raise ValueError(f"Unknown MODEL_TYPE {MODEL_TYPE}")
 
         # 6) Cross-Validation
         cv = KFold(n_splits=N_SPLITS, shuffle=True, random_state=SEED)
@@ -65,20 +74,16 @@ def main():
         joblib.dump(pipeline, model_path)
         print(f"Model pipeline saved to {model_path}")
 
-        # 9) Modell als MLflow Artefakt loggen
-        # Beispiel-Inputs als DataFrame (z.B. die ersten 5 Zeilen deines Trainings-Featuresets)
         input_example = X.head(5)
-
-        # Automatisch Signatur (Schema) aus Input und Prediction ermitteln
         signature = infer_signature(input_example, pipeline.predict(input_example))
 
+        # 9) Modell als MLflow Artefakt loggen
         mlflow.sklearn.log_model(
-             pipeline,
-             name="model",
-             signature=signature,
-             input_example=input_example
-         )
-
+            pipeline,
+            name="model",
+            signature=signature,
+            input_example=input_example
+        )
         mlflow.log_artifact(model_path)
 
 if __name__ == "__main__":

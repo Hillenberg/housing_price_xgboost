@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/hillenberg/DataspellProjects/housing-price/mlruns/620587838464852309/a2baf69cd52e439884a97dcfceaf91b7/artifacts
+end_time: 1750348332632
+entry_point_name: ''
+experiment_id: '620587838464852309'
+lifecycle_stage: active
+run_id: a2baf69cd52e439884a97dcfceaf91b7
+run_name: victorious-shrew-54
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750348310498
+status: 3
+tags: []
+user_id: hillenberg
